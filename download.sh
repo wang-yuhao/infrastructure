@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
 # Script to download data for book
+# from repo: https://github.com/rjurney/Agile_Data_Code_2/blob/master/download.sh
 #
 mkdir data
 export PROJECT_HOME=`pwd`

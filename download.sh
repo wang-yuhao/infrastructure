@@ -33,3 +33,6 @@ curl -Lko $PROJECT_HOME/data/ata.txt http://av-info.faa.gov/data/ACRef/tab/ata.t
 curl -Lko $PROJECT_HOME/data/compt.txt http://av-info.faa.gov/data/ACRef/tab/compt.txt
 curl -Lko $PROJECT_HOME/data/engine.txt http://av-info.faa.gov/data/ACRef/tab/engine.txt
 curl -Lko $PROJECT_HOME/data/prop.txt http://av-info.faa.gov/data/ACRef/tab/prop.txt
+
+curl -Lko data/on_time_performance.parquet.tgz https://s3.amazonaws.com/agile_data_science/on_time_performance.parquet.tgz
+tar -xvzf data/on_time_performance.parquet.tgz -C data

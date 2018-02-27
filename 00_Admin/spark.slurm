@@ -1,7 +1,9 @@
 #!/bin/bash
-#SBATCH -o hadoop.%j.%N.out 
+mkdir work
+
+#SBATCH -o work/spark%j.%N.out 
 #SBATCH -D . 
-#SBATCH -J hadoop
+#SBATCH -J spark
 #SBATCH --get-user-env 
 #SBATCH --clusters=mpp3
 #SBATCH --nodes=1-1 
@@ -14,9 +16,7 @@
 source /etc/profile.d/modules.sh
 
 echo $hostname
-
 source $HOME/anaconda2/bin/activate
-mkdir work
 cd work
-python ../bootstrap_hadoop2.py
+python -m pilot.plugins.spark.bootstrap_spark
 

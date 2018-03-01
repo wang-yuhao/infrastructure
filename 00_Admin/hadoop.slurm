@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir work
+
 #SBATCH -o hadoop.%j.%N.out 
 #SBATCH -D . 
 #SBATCH -J hadoop
@@ -13,9 +13,8 @@ mkdir work
 #SBATCH --time=2:00:00 
 
 source /etc/profile.d/modules.sh
-
+mkdir work
 echo $hostname
-
 source $HOME/anaconda2/bin/activate
 cd work
 python -m pilot.plugins.hadoop2.bootstrap_hadoop2

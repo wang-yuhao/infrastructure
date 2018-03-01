@@ -1,20 +1,20 @@
 #!/bin/bash
-mkdir work
 
 #SBATCH -o work/spark%j.%N.out 
 #SBATCH -D . 
 #SBATCH -J spark
 #SBATCH --get-user-env 
 #SBATCH --clusters=mpp3
-#SBATCH --nodes=1-1 
-#SBATCH --cpus-per-task=56
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=64
 #SBATCH --mail-type=end 
-#SBATCH --mail-user=xyz@xyz.de 
+#SBATCH --mail-user=andre.luckow@gmail.com
 #SBATCH --export=NONE 
 #SBATCH --time=2:00:00 
 
 source /etc/profile.d/modules.sh
 
+mkdir work
 echo $hostname
 source $HOME/anaconda2/bin/activate
 cd work

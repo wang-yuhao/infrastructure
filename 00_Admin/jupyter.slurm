@@ -15,6 +15,10 @@
 source /etc/profile.d/modules.sh
 
 echo $hostname
-source $HOME/anaconda2/bin/activate
+source $HOME/anaconda2/bin/activate python3
 cd ..
-jupyter-lab --no-browser
+
+ssh  vlsshforward@data-analytics.dyndns.lrz.de killall -9 sshd
+ssh -fN -R *:8080:localhost:8000 vlsshforward@data-analytics.dyndns.lrz.de
+
+jupyterhub

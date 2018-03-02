@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -o jupyter.%j.%N.out 
+#SBATCH -o work/jupyter.%j.%N.out 
 #SBATCH -D .
 #SBATCH -J jupyter
 #SBATCH --get-user-env 

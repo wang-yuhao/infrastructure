@@ -10,7 +10,7 @@
 #SBATCH --mail-type=end 
 #SBATCH --mail-user=andre.luckow@gmail.com
 #SBATCH --export=NONE 
-#SBATCH --time=2:00:00 
+#SBATCH --time=48:00:00 
 
 source /etc/profile.d/modules.sh
 

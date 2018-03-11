@@ -7,46 +7,30 @@
 		module load java/1.8
 		export TMPDIR=/tmp/$USER
 
-* Use project directory as home is small
+* Use project directory as home is too small
 
 
-2. Install Anaconda:
+2. Anaconda:
 
-- Download: https://www.anaconda.com/download
+* Use Project ( `ug201`) Anaconda Installation
 
-		conda install pip
-		conda install -c conda-forge jupyterlab
-		conda install -c conda-forge pyspark
+    * Path `/home/hpc/ug201/di57hah/project/anaconda2` 
 
 
-4. Jupyter
-
-    * Secure configuration:
-        http://jupyter-notebook.readthedocs.io/en/stable/config_overview.html
-    * Socks proxy: `ssh -fND 4223 coolmuc2`
+3. Jupyter Page for Notebooks:
 
 
 
-3. Install Pilot-Streaming:
+4. Howto Slurm:
 
-		git clone https://github.com/radical-cybertools/pilot-streaming.git
-		pip install --upgrade .
+    * Show clusters
 
+             sacctmgr list clusters
 
-4. Daten:
-	
+    * Show Info for 1 Cluster
 
+            sinfo --clusters=mpp3
 
-
-Howto Slurm:
-
-Show clusters
-
-	 sacctmgr list clusters
-
-Show Info for 1 Cluster
-
-	sinfo --clusters=mpp3
-
-Show Info for default cluster
-	sinfo
+    * Show Info for default cluster
+            
+            sinfo

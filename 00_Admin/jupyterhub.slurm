@@ -15,10 +15,13 @@
 source /etc/profile.d/modules.sh
 
 echo $hostname
-source $HOME/anaconda2/bin/activate root
+source $HOME/anaconda2/bin/activate python3
 cd ..
 
-ssh  vlsshforward@data-analytics.dyndns.lrz.de killall -9 sshd
-ssh -fN -R *:8080:localhost:8888 vlsshforward@data-analytics.dyndns.lrz.de
+mkdir /tmp/hadoop
+chown 777 /tmp/hadoop
 
-jupyter-lab --no-browser
+ssh  vlsshforward@data-analytics.dyndns.lrz.de killall -9 sshd
+ssh -fN -R *:8080:localhost:8000 vlsshforward@data-analytics.dyndns.lrz.de
+
+jupyterhub

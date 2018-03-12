@@ -5,6 +5,10 @@
             conda install pip
             conda install -c conda-forge jupyterlab
             conda install -c conda-forge pyspark
+            conda install pytorch-cpu torchvision -c pytorch
+            conda install -c conda-forge keras
+            
+            
 
 
 4. Jupyter

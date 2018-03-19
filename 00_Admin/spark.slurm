@@ -16,7 +16,7 @@ source /etc/profile.d/modules.sh
 
 mkdir work
 echo $hostname
-source $HOME/anaconda2/bin/activate
+source /naslx/projects/ug201/di57hah/anaconda2/bin/activate root 
 cd work
 python -m pilot.plugins.spark.bootstrap_spark
 

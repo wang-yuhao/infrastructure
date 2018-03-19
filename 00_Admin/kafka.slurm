@@ -15,8 +15,9 @@ mkdir work
 source /etc/profile.d/modules.sh
 
 echo $hostname
+rm -rf /naslx/projects/ug201/di57hah/exercise-2018/00_Admin/work/config/
 
-source $HOME/anaconda2/bin/activate
+source /naslx/projects/ug201/di57hah/anaconda2/bin/activate root 
 cd work
 python -m pilot.plugins.kafka.bootstrap_kafka
 

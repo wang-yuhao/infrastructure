@@ -1,4 +1,5 @@
 #!/bin/bash
+#SBATCH --reservation=mpp3-Lehrveranstaltung
 #SBATCH -o work/jupyter.%j.%N.out 
 #SBATCH -D .
 #SBATCH -J jupyter
@@ -12,10 +13,12 @@
 #SBATCH --time=48:00:00 
 ##SBATCH --reservation=mpp3-Lehrveranstaltung
 
+
 source /etc/profile.d/modules.sh
 
 echo $hostname
-source $HOME/anaconda2/bin/activate root
+#source $HOME/anaconda2/bin/activate root
+source /home/hpc/ug201/di57hah/project/anaconda2/bin/activate python3
 cd ..
 
 ssh  vlsshforward@data-analytics.dyndns.lrz.de killall -9 sshd

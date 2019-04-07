@@ -1,10 +1,7 @@
 #!/bin/python
 #
-# with Kafka
-#/naslx/projects/ug201/di57hah/students/software/spark-2.3.0-bin-hadoop2.7/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.0 spark_streaming.py 
-#
 # without Kafka
-#/naslx/projects/ug201/di57hah/students/software/spark-2.3.0-bin-hadoop2.7/bin/spark-submit spark_streaming.py 
+# /naslx/projects/pn69si/mnmda001/students/software/spark-2.4.1-bin-hadoop2.7/bin/spark-submit spark_streaming.py 
 
 
 
@@ -45,7 +42,7 @@ STREAMING_WINDOW=60
 SPARK_MASTER="local[1]"
 #SPARK_MASTER="spark://mpp3r03c04s06.cos.lrz.de:7077"
 APP_NAME = "PySpark Lecture"
-os.environ["PYSPARK_PYTHON"] = "/naslx/projects/ug201/di57hah/anaconda2/envs/python3/bin/python"
+os.environ["PYSPARK_PYTHON"] = "/naslx/projects/pn69si/mnmda001/students/software/anaconda3/bin/python"
 
 # If there is no SparkSession, create the environment
 try:
@@ -73,7 +70,7 @@ rc_counts = lines.groupBy("response_code").count()
 
 #append:Only the new rows in the streaming DataFrame/Dataset will be written to the sink
 #complete:All the rows in the streaming DataFrame/Dataset will be written to the sink every time these is some updates
-#update:only the rows that were updated in the streaming DataFrame/Dataset will be written to the sink every time there are some updates. If the query doesn’t contain aggregations, it will be equivalent to append mode.
+#update:only the rows that were updated in the streaming DataFrame/Dataset will be written to the sink every time there are some updates. If the query doesn't contain aggregations, it will be equivalent to append mode.
 
 query = rc_counts \
     .writeStream \

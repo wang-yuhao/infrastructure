@@ -30,7 +30,7 @@ try:
 except ImportError:
     import json
 
-import __builtin__
+import builtins
 
 def map(line):
     try:
@@ -41,7 +41,7 @@ def map(line):
         pass
     
 def reduce(key, values):
-    emit(key, str(sum(__builtin__.map(int,values))))
+    emit(key, str(sum(builtins.map(int, values))))
 
 # Common library code follows:
 
@@ -50,7 +50,7 @@ def emit(key, value):
     Emits a key->value pair.  Key and value should be strings.
     """
     try:
-        print "\t".join( (key, value) )
+        print("\t".join((key, value)))
     except:
         pass
 
@@ -81,7 +81,7 @@ def run_reduce():
 def main():
     """Runs map or reduce code, per arguments."""
     if len(sys.argv) != 2 or sys.argv[1] not in ("map", "reduce"):
-        print "Usage: %s <map|reduce>" % sys.argv[0]
+        print("Usage: %s <map|reduce>" % sys.argv[0])
         sys.exit(1)
     if sys.argv[1] == "map":
         run_map()
@@ -91,4 +91,4 @@ def main():
         assert False
 
 if __name__ == "__main__":
-  main()
+    main()

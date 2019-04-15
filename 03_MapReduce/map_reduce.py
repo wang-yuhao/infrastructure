@@ -54,7 +54,8 @@ def run_map():
     """Calls map() for each input value."""
     for line in sys.stdin:
         line = line.rstrip()
-        list(map(line))
+        print(line.split(" ")[-2])
+        map(line)
 
 def run_reduce():
     """Gathers reduce() data in memory, and calls reduce()."""
